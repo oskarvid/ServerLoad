@@ -1,6 +1,16 @@
 # ServerLoad
 A simple server load bash and R script for graphing CPU, disk and RAM usage
 
+Sample CPU usage graph
+![Disk-graph](https://raw.githubusercontent.com/oskarvid/ServerLoad/master/.SystemLoad.png)
+
+Sample disk usage graph
+![Disk-graph](https://raw.githubusercontent.com/oskarvid/ServerLoad/master/.DiskUsage.png)
+
+Sample RAM usage graph
+![Disk-graph](https://raw.githubusercontent.com/oskarvid/ServerLoad/master/.RAM-Usage.png)
+
+
 ## Dependencies
 Docker
 
