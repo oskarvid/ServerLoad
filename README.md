@@ -24,3 +24,6 @@ Behind the scenes the get-graphs.sh script will run
 If you don't already have the `r-base` docker image it will get downloaded automatically
 
 Output files named `DiskUsage.png`, `RAM-Usage.png` and `SystemLoad.png` will get created in the directory that you ran the `get-graphs.sh` script from.
+
+## Disclaimer
+The `serverload.sh` script is a severe hack, it works so far, but it's not pretty.
