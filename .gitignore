@@ -1,2 +1,3 @@
 *.png
 sshfs-mount.sh
+input/my*

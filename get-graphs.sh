@@ -14,9 +14,10 @@ fi
 
 # This is also very hacky. It checks if the syntax of the input file is correct
 echo "Checking input file syntax"
-head $1 | grep -E "[0-9]*\.[0-9]* [0-9]*\.[0-9]* [0-9]*\.[0-9]* [0-9]*/[0-9]* [0-9]*.[0-9]{2}\:[0-9]{2}.procs_blocked [0-9]*.[0-9]*.[0-9]*G.[0-9]*G.[0-9]*G.[0-9]*.[0-9]*.[0-9]*.[0-9]*" 1>/dev/null
+head $1 | grep -E "[0-9]*\.[0-9]* [0-9]*\.[0-9]* [0-9]*\.[0-9]* [0-9]*/[0-9]* [0-9]*.[0-9]{2}\:[0-9]{2}.procs_blocked [0-9]*.[0-9]*.[0-9]*.[0-9]*.[0-9]*.[0-9]*.[0-9]*.[0-9]*.[0-9]*.[0-9]* [0-9]* [0-9]* [a-z]*[0-9]" 1>/dev/null
 echo "It checks out"
 
 echo "Running R script"
 docker run --rm -ti -u $(id -u $USER):$(id -g $USER) -v $(pwd):/data r-base Rscript /data/systemLoad.R /data/$1
 echo "All done"
+

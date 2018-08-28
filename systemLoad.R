@@ -42,25 +42,21 @@ legend("topright", c("1 minute load average", "5 minute load average", "15 minut
 invisible(dev.off())
 print("SystemLoad.png has been created")
 
-## Remove "G" from the disk usage column
-table[,11] <- gsub("G", "", table[,11])
-table[,12] <- gsub("G", "", table[,12])
-
 #tail(table)
-
 
 png('DiskUsage.png', width = 1920, height = 1080)
 
+limit <- as.numeric(table[1,10])
 ## -- Plot disk usage graph
-plot(table[,11], xaxt = "n", ylim=c(0, 1000), type = "l" , col="blue", 
+plot(table[,11], xaxt = "n", ylim=c(0, limit), type = "l" , col="blue", 
      xlab="Time", ylab="Disk Usage", 
-     main = "Disk usage")
+     main = "Disk usage (GB)")
 
 ## Draw X axis
 axis(1, at=1:len[1], labels = table[1:len[1],6])
 
 ## Create legend
-legend("topright", c("/dev/sdb1"), col=c("blue"), lty=c(1),
+legend("topright", c(paste(table[1,17])), col=c("blue"), lty=c(1),
        inset=c(0,0), xpd=TRUE, bty="n", cex = 2
 )
 
