@@ -18,6 +18,8 @@ head $1 | grep -E "[0-9]*\.[0-9]* [0-9]*\.[0-9]* [0-9]*\.[0-9]* [0-9]*/[0-9]* [0
 echo "It checks out"
 
 echo "Running R script"
-docker run --rm -ti -u $(id -u $USER):$(id -g $USER) -v $(pwd):/data r-base Rscript /data/systemLoad.R /data/$1
+docker run --rm -ti -u $(id -u $USER):$(id -g $USER) \
+-v /tmp:/tmp \
+-v $(pwd):/script r-base Rscript /script/systemLoad.R $1
 echo "All done"
 
