@@ -23,3 +23,4 @@ docker run --rm -ti -u $(id -u $USER):$(id -g $USER) \
 -v $(pwd):/script r-base Rscript /script/systemLoad.R $1
 echo "All done"
 
+eog /tmp/SystemLoad.png
