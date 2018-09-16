@@ -1,6 +1,8 @@
 # ServerLoad
 A simple server load bash and R ~~script~~ hack for graphing CPU, disk and RAM usage
 
+## If you're not running Ubuntu or don't have `eog` installed, you need to edit the `get-graphs.sh` script and remove the last line so it doesn't automatically try to open the `SystemLoad.png` graph.
+
 Sample CPU usage graph
 ![Disk-graph](https://raw.githubusercontent.com/oskarvid/ServerLoad/master/.SystemLoad.png)
 
