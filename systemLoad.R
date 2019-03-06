@@ -12,7 +12,7 @@ table <-
 
 #head(table)
 
-setwd('/tmp')
+#setwd('/tmp')
 
 ## -- Create variables for plot dimensions
 len=dim(table[1]) # Creates variable that will define the number of x axis data points for the graph

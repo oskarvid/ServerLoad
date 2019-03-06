@@ -1,6 +1,12 @@
 # ServerLoad
 A simple server load bash and R ~~script~~ hack for graphing CPU, disk and RAM usage
 
+## Here are the simplest instructions:
+Run `./serverload.sh /dev/sdb2 20`, this will gather CPU, RAM and disk usage of /dev/sdb2 every 20 seconds.  
+To create the graphs just run `Rscript systemLoad.R input/mylogfile-2019-etc`, you will get three png images in your current directory.
+
+You can use the `get-graphs.sh` script if you have docker and don't want to install R locally, see the "Manual usage" instructions below for that. I should probably refine this readme. Feel free to complicate things by following the instructions below ;)
+
 ## If you're not running Ubuntu or don't have `eog` installed, you need to edit the `get-graphs.sh` script and remove the last line so it doesn't automatically try to open the `SystemLoad.png` graph.
 
 Sample CPU usage graph

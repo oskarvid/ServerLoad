@@ -32,10 +32,8 @@ if [[ "$INTERVAL" =~ $NUMERICPATTERN ]]; then
 		&& df | grep $1 | awk {'print $2/1000000,$3/1000000,$4/1000000'} >> /tmp/mylogfileDisk-$NOW \
 		&& free -m | awk 'FNR==2 { print $2, $3, $4, $7}' >> /tmp/mylogfileRAM-$NOW \
 		&& paste /tmp/mylogfileLoad-$NOW /tmp/mylogfileTime-$NOW /tmp/mylogfileBloc-$NOW /tmp/mylogfileQueu-$NOW /tmp/mylogfileDisk-$NOW /tmp/mylogfileRAM-$NOW > \
-		/tmp/mylogfile-$NOW \
-		&& sed -i 's|$| '"${DEV}"'|' /tmp/mylogfile-$NOW \
-		&& chmod 644 /tmp/mylogfile* \
-		&& chown 1000:1000 /tmp/mylogfile*
+		input/mylogfile-$NOW \
+		&& sed -i 's|$| '"${DEV}"'|' input/mylogfile-$NOW
 	done
 else
 	echo "Time interval format must be a number and cannot include decimal points"
